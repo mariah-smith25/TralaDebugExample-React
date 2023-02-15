@@ -17,14 +17,25 @@ function App() {
         const response = await axios.get(
           "https://address-book.trala.com:8080/v1/contacts"
         );
-        setLlamas(response.data);
+        // setLlamas(response.data);
+        setLlamas(
+          response.data.map((llama) => {
+            const date = new Date(llama.birth_date);
+            const formattedDate = llama.birth_date
+              ? date.toISOString().substring(0, 10)
+              : null;
+              const mutablellama = llama;
+            mutablellama.birth_date = formattedDate;
+            return mutablellama;
+          })
+        );
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchLlamas();
-  }, [llamas]);
+  }, []);
 
   const handleAddNew = () => {
     setCurrentLlama({});
@@ -43,7 +54,7 @@ function App() {
     const { id } = formData;
     const filteredObject = Object.fromEntries(
       Object.entries(formData).filter(
-        ([key, value]) => key !== "id" && key !== "created_at" && value !== null
+        ([key, value]) => key !== "id" && key !== "created_at" && key !== "is_active" && value !== null
       )
     );
 
