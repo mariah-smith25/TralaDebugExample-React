@@ -1,62 +1,34 @@
 # Trala Debug Example
 
-A bunch of branches are waiting to be committed to this project, but each has had a serious bug found in it. Please select a bug from the list of bug reports below, switch to its indicated branch, and fix it (with a thought to preventing regressions via tests).
+Our internal MVP launch was a success. We got buy-in from the sales team to move forward with our proposed rollout schedule. During their testing they made note of a few bugs and enhancements we'll need to make before our final release to production. 
 
 
-## Bug Reports
+## Bug Reports/ Requested Enhancements
 
 ### Recursive Homepage Loading
-Branch: recursive-loading-homepage
-The app now recursively queries the full sales force database, making it impossible to load the homepage anymore.
+The app now recursively queries the full sales force database, completely overloading the network.
 
 ---
 
 ### Can’t Delete Contacts
-Branch: delete-contacts-broken
-The backend engineer forgot to communicate that the backend now implements “soft” deletions. The current API doc fails to reflect this.
+The backend engineer forgot to communicate that the backend now implements “soft” deletions. The current API doc lacks this detail.
 
 ---
 
-### Broken Birthday Editing
-Branch: put-birthday-broken
-A recent API update no longer allows us to add or edit customer birthdays. We also need to prevent users from entering future birthdays.
+### Degraded Birthday Operations
+Our app is also supposed to highlight customers with birthdays in the current month. 
+Users are reporting that other customers are randomly being highlighted as well. Some also noticed issues updating birthdays. A recent API change may be to blame.
+
 
 ---
 
-### Slow Address Searching
-Branch: slow-address-searching
-The searching functionality takes entirely too much time on production data (3s). Our required KPI for release is <1s. We should probably refactor if we have time. We’ve only been testing against staging.
+### Birthday Breakdown Visual Enhancement
+Our team wants to drive up Trala satisfaction numbers by sending out birthday gifts. We missed in the spec a feature request to add a visual component that breaks down birthdays by month. This will help with budget forecasting for the birthday gift campaign.
 
 ---
 
-### Inconsistent Customer Highlighting
-Branch: inconsistent-birthday-highlighting
-Our app is supposed to highlight customers with birthday’s within the next month. Users are reporting that other customers are randomly being highlighted as well.
-The developers swear they tested for this.
+### Slow Llama Searching
+The searching functionality is case sensitive and only filters by first name. It should filter by email and full name.
+In general searching takes entirely too much time on production data (3s). Our required KPI for the next release is <1s. We should probably refactor, we’ve only been testing against staging. 
 
 ---
-
-### Edits not Reset on Cancel
-Branch: edits-not-reset-on-cancel
-Our testers reported the following regression bug:
-Tap on a name to edit it.
-Make a change to any contact detail.
-Tap “Cancel” to cancel — do not tap “Save”
-Note that the canceled changes have been synced to the backend and appear on the homepage?
-We thought we tested this. Consider looking through the commit history to figure out what changes we made recently. 
-
----
-
-### Poor Scrolling Performance
-Branch: poor-scroll-performance
-Testers are complaining of stuttering and poor performance when scrolling through the address list using production data. What can we do to improve our scroll performance?
-
----
-
-### Error page missing error messages
-Branch: missing-error-messages
-The MVP of our app only has a basic error icon. We were supposed to add dynamic error messages to the error page. 
-What error messaging improvements would you give the backend team?
-
-
-
