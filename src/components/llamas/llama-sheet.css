@@ -1,0 +1,16 @@
+td {
+  border: 1px solid salmon;
+  padding: 15px;
+}
+
+button {
+  margin: 5px;
+}
+
+tr.highlighted {
+  background-color: #ffc800;
+}
+
+table {
+  margin-top: 20px;
+}
