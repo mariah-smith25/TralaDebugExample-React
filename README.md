@@ -28,7 +28,7 @@ Steps to reproduce:
 1. New Llama is highlighted and their birthday shows as last day of February
 
 
-While we demoing the MVP we had to put in a workaround for some mismatched date formatting with the server. We got through the demo but we need to regression test and fix any broken birth day functionality.
+While demoing the MVP we had to put in a workaround for some mismatched date formatting with the server. We got through the demo but we need to regression test and fix any broken birth day functionality.
 
 
 ---
