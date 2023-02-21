@@ -4,16 +4,14 @@ Our internal MVP launch of the Llama Management System was a success.  We got bu
 
 
 ## Bug Reports/ Requested Enhancements
-## Bug Reports/ Requested Enhancements
+
 
 ### Recursive Homepage Loading
-The app now recursively queries the full sales force database, completely overloading the network.
 The app now recursively queries the full sales force database, completely overloading the network.
 
 ---
 
 ### Can’t Delete Contacts
-The backend engineer forgot to communicate that the backend now implements “soft” deletions. The current API doc lacks this detail.
 The backend engineer forgot to communicate that the backend now implements “soft” deletions. The current API doc lacks this detail.
 
 ---
